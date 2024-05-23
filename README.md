@@ -1,2 +1,2 @@
 # veritaban-2
-Veritabanı uygulamaları
+Veritabanı sql uygulamaları
