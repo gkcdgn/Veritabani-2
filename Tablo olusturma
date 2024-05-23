@@ -1,0 +1,42 @@
+--SQL formülleri
+---Tablo ve kolonların oluşturulması
+Create table tabloadi(
+
+
+Calisanİd int primary key,
+Calisanlar varchar(20),
+Cinsiyet varchar(10),
+Görevleri varchar(20),
+Maaslar int
+
+) 
+--Tablo 1
+--Tabloya veriler eklemek 
+insert into tabloadi(Calisanİd,Calisanlar,Cinsiyet,Görevleri,Maaslar) Values('1','Mehmet doğan','Erkek','Yönetici','30000')
+--- Tablodan tüm verilerin seçilmesi
+select *from tabloadi
+  ---tablo 1
+---Tablodan bazı verilerin alınması
+select Calisanlar,Görevleri from tabloadi
+  ---tablo 2
+  ---Benzersiz verilerin alınması
+select Distinct Görevleri from tabloadi
+  ---tablo 3
+  ---Belirli bir kosulla göre verilerin alınması
+select *from tabloadi where Calisanlar ='Gökçe Günay'
+select *from tabloadi where [Maaslar]>20000
+Select *from tabloadi where [Maaslar]<20500 and [Maaslar]>10500
+  ---Tablo 4,5
+---lİKE kullanımı
+select *from tabloadi where [Calisanlar] like '%m%'
+select *from tabloadi where [Calisanlar] like '%e'
+  --Tablo 6,7
+---Güncelleme 
+update tabloadi set[Calisanlar]='Özlem Özen' where [Calisanlar]='Özlem Fırat'
+---Tabloda değişiklikler yapamak
+Alter table tabloadi add Telf_no int
+update tabloadi set[Telf_no]=123
+alter table tabloadi drop column[Telf_no]
+  --Tablo 8
+--silme işlemleri
+delete from tabloadi where [Calisanlar]='Gökçe Günay'
