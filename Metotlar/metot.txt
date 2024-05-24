@@ -1,0 +1,23 @@
+select *from nakliye
+-- M 1
+select SUM([ucret]) as Toplam from nakliye
+-- M 2
+select Avg([ucret]) as Ortalama from nakliye
+-- M 3
+
+select max([ucret]) as maxDeger from nakliye
+-- M 4
+Select sehir,sevkülkesi from nakliye where sevkülkesi='Belçika' or sevkülkesi='Fransa'
+-- M 5
+Select sehir,sevkülkesi from nakliye where sevkülkesi IN ('Fransa','Türkiye')
+-- M 6
+Select *from nakliye where ucret between 50 and 70
+-- M 7
+select ucret from nakliye order by ucret ASC
+-- M 8
+select sevkülkesi,sum(ucret) as toplam from nakliye group by sevkülkesi
+-- M 9
+select sevkülkesi,sehir,sum(ucret) as toplam from nakliye group by sevkülkesi,sehir order by sevkülkesi ASC
+-- M 10
+select sevkülkesi,AVG(ucret) from nakliye group by sevkülkesi having AVG(ucret) >50
+-- M 11
