@@ -1,0 +1,24 @@
+--drop table tabloadi
+---joinler
+---inner join tabloların kesişim verilerini gösterir.
+----Full join tabloların tüm verilerini gösterir.
+---Left join iki tablo arasındaki soldaki tablo verilerini gösterir
+select *from satislar
+select *from urunler
+select *from satislar inner join urunler on satislar.musteri_id=urunler.urunid
+select*from satislar left join urunler on satislar.musteri_id=urunler.urunid
+select*from satislar right join urunler on satislar.musteri_id=urunler.urunid
+select*from satislar full join urunler on satislar.musteri_id=urunler.urunid
+
+
+select *from nakliye
+select SUM([ucret]) as Toplam from nakliye
+select Avg([ucret]) as Ortalama from nakliye
+select max([ucret]) as maxDeger from nakliye
+Select sehir,sevkülkesi from nakliye where sevkülkesi='Belçika' or sevkülkesi='Fransa'
+Select sehir,sevkülkesi from nakliye where sevkülkesi IN ('Fransa','Türkiye')
+Select *from nakliye where ucret between 50 and 70
+select ucret from nakliye order by ucret ASC
+select sevkülkesi,sum(ucret) as toplam from nakliye group by sevkülkesi
+select sevkülkesi,sehir,sum(ucret) as toplam from nakliye group by sevkülkesi,sehir order by sevkülkesi ASC
+select sevkülkesi,AVG(ucret) from nakliye group by sevkülkesi having AVG(ucret) >50
